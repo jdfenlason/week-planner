@@ -6,19 +6,26 @@ body {
   margin: 0 auto;
 }
 
+header {
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+}
+
 .hidden {
   display: none;
 }
 
 .modal-container {
+  height: 100%;
   align-content: center;
-  max-width: 768px;
+  justify-content: center;
+  max-width: 450px;
   margin: 0 auto;
   padding: 0 1.75rem;
   z-index: 5;
-  /* position: absolute;
-  top: 250px;
-  right: 750px; */
   background-color: white;
 }
 
@@ -63,4 +70,5 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
+  z-index: -1;
 }
