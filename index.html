@@ -7,16 +7,95 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class= "container">
+
+<div class="overlay">
+
+</div>
+
+  <div class= "container">
+
+    <div class="modal-container">
+      <div class="row">
+        <div class="col">
+          <h1 class="modal-header">Add Entry</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <form action="">
+            <select name="day" id="day" class="select-input"></select>
+              <option value="">Day of Week</option>
+              <option value="Sunday">Sunday</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+            <select name="time" id="time"></select>
+              <option value="">Time</option>
+              <option value="12:00">12:00</option>
+              <option value="1:00">1:00</option>
+              <option value="2:00">2:00</option>
+              <option value="3:00">3:00</option>
+              <option value="4:00">4:00</option>
+              <option value="5:00">5:00</option>
+              <option value="6:00">6:00</option>
+              <option value="7:00">7:00</option>
+              <option value="8:00">8:00</option>
+              <option value="9:00">9:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+          </form>
+        </div>
+      </div>
+
+      <div></div>
+
+    </div>
 
 
+    <div class ="row">
+      <div class = "col">
+        <h1 class="planner-title">Weekly Planner</h1>
+      </div>
+    </div>
 
-<div class ="row">
-<div class = "col">
-<h1 class="planner-title">Weekly Planner</h1>
-</div>
-</div>
-</div>
+    <div class="row">
+      <div class="col">
+        <button class="week-btn">Sunday</button>
+        <button class="week-btn">Monday</button>
+        <button class="week-btn">Tuesday</button>
+        <button class="week-btn">Wednesday</button>
+        <button class="week-btn">Thursday</button>
+        <button class="week-btn">Friday</button>
+        <button class="week-btn">Saturday</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="entry-btn">Add Entry</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
