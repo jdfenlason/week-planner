@@ -32,7 +32,6 @@ h1 {
   background-color: white;
   margin: 0 auto;
   padding: 0 1.75rem;
-
 }
 
 .row {
@@ -79,4 +78,8 @@ h1 {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   z-index: -1;
+}
+
+button:hover::after {
+  background: rgba(0, 0, 0, 0.2);
 }
