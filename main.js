@@ -25,6 +25,22 @@ $entryBtn.addEventListener('click', function (e) {
 
 $form.addEventListener('submit', function (e) {
   e.preventDefault();
-  console.log(e);
-  console.log('hello');
+  var userInput = {};
+  userInput = $form.elements.day.value;
+  userInput = $form.elements.time.value;
+  userInput = $form.elements.description.value;
+  planner.unshift(userInput);
+
+
 });
+
+  // day: "Sunday";
+  // time: [];
+  // description: [];
+planner {
+  day : 'Sunday';
+   {
+     time:[]
+     description: []
+   }
+  }
