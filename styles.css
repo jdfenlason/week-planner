@@ -20,13 +20,19 @@ h1 {
 
 .modal-container {
   height: 100%;
-  align-content: center;
+  display: flex;
   justify-content: center;
-  max-width: 450px;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.modal-content {
+  background-color: white;
   margin: 0 auto;
   padding: 0 1.75rem;
-  z-index: 5;
-  background-color: white;
+
 }
 
 .row {
@@ -52,6 +58,8 @@ h1 {
 .entry-btn {
   margin-top: 3rem;
   padding: 0.5rem 2.5rem;
+  z-index: 500;
+  cursor: pointer;
 }
 
 .submit-button {
