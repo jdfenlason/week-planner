@@ -25,22 +25,14 @@ $entryBtn.addEventListener('click', function (e) {
 
 $form.addEventListener('submit', function (e) {
   e.preventDefault();
-  var userInput = {};
-  userInput = $form.elements.day.value;
-  userInput = $form.elements.time.value;
-  userInput = $form.elements.description.value;
-  planner.unshift(userInput);
-
-
+  var userInput = { day: $form.elements.day.value, time: $form.elements.time.value, entry: $form.elements.description.value };
+  planner.entries.unshift(userInput);
+  $submitBtn.addEventListener('click', function (e) {
+    console.log(e.target);
+    $container.className = 'container';
+    $modal.className = 'modal-container hidden';
+    $modalContent.className = 'modal-content hidden';
+    $overlay.className = 'overlay hidden';
+    upDown = true;
+  });
 });
-
-  // day: "Sunday";
-  // time: [];
-  // description: [];
-planner {
-  day : 'Sunday';
-   {
-     time:[]
-     description: []
-   }
-  }
