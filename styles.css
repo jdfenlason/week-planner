@@ -11,10 +11,15 @@ body {
 }
 
 .modal-container {
+  align-content: center;
   max-width: 768px;
   margin: 0 auto;
   padding: 0 1.75rem;
   z-index: 5;
+  /* position: absolute;
+  top: 250px;
+  right: 750px; */
+  background-color: white;
 }
 
 .row {
@@ -45,6 +50,7 @@ body {
 .submit-button {
   float: right;
   margin-top: 0.3rem;
+  margin-bottom: 25px;
 }
 
 .select-input {
