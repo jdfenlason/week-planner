@@ -6,6 +6,7 @@ var $entryBtn = document.querySelector('.entry-btn');
 var $container = document.querySelector('.container');
 var $form = document.querySelector('form');
 var upDown = false;
+var tbody = document.querySelector('tbody');
 
 $entryBtn.addEventListener('click', function (e) {
   if (upDown === false) {
@@ -28,28 +29,38 @@ $form.addEventListener('submit', function (e) {
   var userInput = {
     day: $form.elements.day.value,
     time: $form.elements.time.value,
-    entry: $form.elements.description.value,
+    entry: $form.elements.description.value
   };
   planner.entries.unshift(userInput);
+
   $submitBtn.addEventListener('click', function (e) {
-    console.log(e.target);
     $container.className = 'container';
     $modal.className = 'modal-container hidden';
     $modalContent.className = 'modal-content hidden';
     $overlay.className = 'overlay hidden';
     upDown = true;
   });
+
+  $submitBtn.addEventListener('click', generateEntry);
+
 });
+
+function generateEntry(object) {
+  for (var i = 0; i < planner.entries.length; i++) {
+    var lineItem = entry(planner.entries[i]);
+    tbody.appendChild(lineItem);
+    console.log('this work');
+  }
+}
 
 function entry(object) {
   var $tr = document.createElement('tr');
-  $tr.className = entries.day;
 
   var $tdTime = document.createElement('td');
-  $td.textContent = entries.time;
+  $tdTime.textContent = planner.entries.time;
 
   var $tdDes = document.createElement('td');
-  $tdDes = entries.description;
+  $tdDes.textContent = planner.entries.description;
 
   var $updateBtn = document.createElement('button');
   $updateBtn.setAttribute('class', 'update-button');
@@ -61,5 +72,21 @@ function entry(object) {
   $tr.appendChild($tdDes);
   $tr.appendChild($updateBtn);
   $tr.appendChild($deleteBtn);
+
   return $tr;
 }
+
+// function generateEntry(object) {
+//   for (var i = 0; i < planner.entries.length; i++) {
+//     var lineItem = entry(planner.entries[i]);
+//     tbody.appendChild(lineItem);
+//   }
+// }
+
+// window.addEventListener('DOMContentLoaded', function (e) {
+
+// for (var i = 0; i < planner.entries.length; i++) {
+//       var lineItem = entry(planner.entries[i]);
+//       tbody.appendChild(lineItem);
+
+// });

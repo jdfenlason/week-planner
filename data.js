@@ -39,3 +39,8 @@
 var planner = {
   entries: []
 };
+
+var storage = localStorage.getItem('weekly-planner');
+if (storage !== null) {
+  planner = JSON.parse(storage);
+}
