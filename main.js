@@ -25,7 +25,11 @@ $entryBtn.addEventListener('click', function (e) {
 
 $form.addEventListener('submit', function (e) {
   e.preventDefault();
-  var userInput = { day: $form.elements.day.value, time: $form.elements.time.value, entry: $form.elements.description.value };
+  var userInput = {
+    day: $form.elements.day.value,
+    time: $form.elements.time.value,
+    entry: $form.elements.description.value,
+  };
   planner.entries.unshift(userInput);
   $submitBtn.addEventListener('click', function (e) {
     console.log(e.target);
@@ -36,3 +40,26 @@ $form.addEventListener('submit', function (e) {
     upDown = true;
   });
 });
+
+function entry(object) {
+  var $tr = document.createElement('tr');
+  $tr.className = entries.day;
+
+  var $tdTime = document.createElement('td');
+  $td.textContent = entries.time;
+
+  var $tdDes = document.createElement('td');
+  $tdDes = entries.description;
+
+  var $updateBtn = document.createElement('button');
+  $updateBtn.setAttribute('class', 'update-button');
+
+  var $deleteBtn = document.createElement('button');
+  $deleteBtn.setAttribute('class', 'delete-button');
+
+  $tr.appendChild($tdTime);
+  $tr.appendChild($tdDes);
+  $tr.appendChild($updateBtn);
+  $tr.appendChild($deleteBtn);
+  return $tr;
+}
