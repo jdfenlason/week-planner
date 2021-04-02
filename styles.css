@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0 auto;
+}
+
 .hidden {
   display: none;
 }
@@ -10,6 +14,7 @@
   max-width: 768px;
   margin: 0 auto;
   padding: 0 1.75rem;
+  z-index: 5;
 }
 
 .row {
@@ -21,10 +26,6 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-}
-
-.col-half {
-
 }
 
 .planner-title {
@@ -44,4 +45,16 @@
 .submit-button {
   float: right;
   margin-top: 0.3rem;
+}
+
+.select-input {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
 }
