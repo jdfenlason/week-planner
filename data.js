@@ -44,3 +44,8 @@ var storage = localStorage.getItem('weekly-planner');
 if (storage !== null) {
   planner = JSON.parse(storage);
 }
+
+window.addEventListener('beforeunload', function (event) {
+  var transformToJSON = JSON.stringify(planner);
+  localStorage.setItem('weekly-planner', transformToJSON);
+});

@@ -29,7 +29,7 @@ $form.addEventListener('submit', function (e) {
   var userInput = {
     day: $form.elements.day.value,
     time: $form.elements.time.value,
-    entry: $form.elements.description.value
+    description: $form.elements.description.value
   };
   planner.entries.unshift(userInput);
 
@@ -45,28 +45,22 @@ $form.addEventListener('submit', function (e) {
 
 });
 
-function generateEntry(object) {
-  for (var i = 0; i < planner.entries.length; i++) {
-    var lineItem = entry(planner.entries[i]);
-    tbody.appendChild(lineItem);
-    console.log('this work');
-  }
-}
-
-function entry(object) {
+function entry(entryData) {
   var $tr = document.createElement('tr');
 
   var $tdTime = document.createElement('td');
-  $tdTime.textContent = planner.entries.time;
+  $tdTime.textContent = entryData.time;
 
   var $tdDes = document.createElement('td');
-  $tdDes.textContent = planner.entries.description;
+  $tdDes.textContent = entryData.description;
 
   var $updateBtn = document.createElement('button');
   $updateBtn.setAttribute('class', 'update-button');
+  $updateBtn.textContent = 'Update';
 
   var $deleteBtn = document.createElement('button');
   $deleteBtn.setAttribute('class', 'delete-button');
+  $deleteBtn.textContent = 'Delete';
 
   $tr.appendChild($tdTime);
   $tr.appendChild($tdDes);
@@ -76,6 +70,13 @@ function entry(object) {
   return $tr;
 }
 
+function generateEntry(object) {
+  for (var i = 0; i < planner.entries.length; i++) {
+    var lineItem = entry(planner.entries[i]);
+    tbody.appendChild(lineItem);
+    console.log('this work');
+  }
+}
 // function generateEntry(object) {
 //   for (var i = 0; i < planner.entries.length; i++) {
 //     var lineItem = entry(planner.entries[i]);

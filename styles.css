@@ -67,6 +67,13 @@ h1 {
   margin-bottom: 25px;
 }
 
+.update-button {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
 .select-input {
   margin-bottom: 1rem;
   margin-right: 1rem;
