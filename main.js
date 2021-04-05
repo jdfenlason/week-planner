@@ -5,47 +5,53 @@ var $submitBtn = document.querySelector('.submit-button');
 var $entryBtn = document.querySelector('.entry-btn');
 var $container = document.querySelector('.container');
 var $form = document.querySelector('form');
-var upDown = false;
-var tbody = document.querySelector('tbody');
+// var $btnContainer = document.querySelector('button-container');
 
-$entryBtn.addEventListener('click', function (e) {
-  if (upDown === false) {
-    $container.className = 'container';
-    $modal.className = 'modal-container hidden';
-    $modalContent.className = 'modal-content hidden';
-    $overlay.className = 'overlay hidden';
-    upDown = true;
-  } else {
-    $modal.className = 'modal-container';
-    $modalContent.className = 'modal-content';
-    $overlay.className = 'overlay';
-    $container.className = 'container hidden';
-    upDown = false;
-  }
-});
+var $tbody = document.querySelector('tbody');
+window.addEventListener('DOMContentLoaded', entryLoad);
+var data = {
+  entries: [],
+  editing: null,
+  nextEntryId: 1
+};
 
-$form.addEventListener('submit', function (e) {
-  e.preventDefault();
+$entryBtn.addEventListener('click', addEntryBtn);
+
+function addEntryBtn(event) {
+  $modal.className = 'modal-container';
+  $modalContent.className = 'modal-content';
+  $overlay.className = 'overlay';
+  $entryBtn.className = 'entry-btn hidden';
+}
+
+$form.addEventListener('submit', addEntries);
+
+$submitBtn.addEventListener('click', submit);
+
+function addEntries(event) {
+  event.preventDefault();
+  // var time = $form.elements.time.value;
+  // var description = $form.elements.description.value;
+  // var day = $form.elements.day.value;
   var userInput = {
     day: $form.elements.day.value,
     time: $form.elements.time.value,
     description: $form.elements.description.value
   };
-  planner.entries.unshift(userInput);
+  data.entries.unshift(userInput);
+  data.nextEntryId++;
+  // for(var i =0; i <data.entries.length; i++)
+}
 
-  $submitBtn.addEventListener('click', function (e) {
-    $container.className = 'container';
-    $modal.className = 'modal-container hidden';
-    $modalContent.className = 'modal-content hidden';
-    $overlay.className = 'overlay hidden';
-    upDown = true;
-  });
+function submit(event) {
+  $container.className = 'container';
+  $modal.className = 'modal-container hidden';
+  $modalContent.className = 'modal-content hidden';
+  $overlay.className = 'overlay hidden';
+  $entryBtn.className = 'entry-btn';
+}
 
-  $submitBtn.addEventListener('click', generateEntry);
-
-});
-
-function entry(entryData) {
+function createEntry(entryData) {
   var $tr = document.createElement('tr');
 
   var $tdTime = document.createElement('td');
@@ -70,24 +76,20 @@ function entry(entryData) {
   return $tr;
 }
 
-function generateEntry(object) {
-  for (var i = 0; i < planner.entries.length; i++) {
-    var lineItem = entry(planner.entries[i]);
-    tbody.appendChild(lineItem);
-    console.log('this work');
+function entryLoad(event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var $entryNode = createEntry(data.entries[i]);
+    $tbody.append($entryNode);
   }
 }
-// function generateEntry(object) {
-//   for (var i = 0; i < planner.entries.length; i++) {
-//     var lineItem = entry(planner.entries[i]);
-//     tbody.appendChild(lineItem);
-//   }
-// }
 
-// window.addEventListener('DOMContentLoaded', function (e) {
+var previousDataJSON = localStorage.getItem('data-storage');
+if (previousDataJSON !== null) {
+  data = JSON.parse(previousDataJSON);
+}
+function storeData(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data-storage', dataJSON);
+}
 
-// for (var i = 0; i < planner.entries.length; i++) {
-//       var lineItem = entry(planner.entries[i]);
-//       tbody.appendChild(lineItem);
-
-// });
+window.addEventListener('beforeunload', storeData);

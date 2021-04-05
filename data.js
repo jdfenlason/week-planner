@@ -1,51 +1,17 @@
-// var planner = [
-//   {
-//     day: 'Sunday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Monday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Tuesday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Wednesday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Thursday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Friday',
-//     time: [],
-//     description: []
-//   },
-//   {
-//     day: 'Saturday',
-//     time: [],
-//     description: []
-//   }
-// ];
+// var data = {
+//   view: 'entry-form',
+//   entries: [],
+//   editing: null,
+//   nextEntryId: 1
+// };
 
-var planner = {
-  entries: []
-};
+// var previousDataJSON = localStorage.getItem('data-storage');
+// if (previousDataJSON !== null) {
+//   data = JSON.parse(previousDataJSON);
+// }
+// function storeData(event) {
+//   var dataJSON = JSON.stringify(data);
+//   localStorage.setItem('data-storage', dataJSON);
+// }
 
-var storage = localStorage.getItem('weekly-planner');
-if (storage !== null) {
-  planner = JSON.parse(storage);
-}
-
-window.addEventListener('beforeunload', function (event) {
-  var transformToJSON = JSON.stringify(planner);
-  localStorage.setItem('weekly-planner', transformToJSON);
-});
+// window.addEventListener('beforeunload', storeData);

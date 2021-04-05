@@ -7,11 +7,7 @@ body {
 }
 
 header {
-  margin: 0 auto;
-}
-
-h1 {
-  margin: 0;
+  width: 100%;
 }
 
 .hidden {
@@ -19,13 +15,14 @@ h1 {
 }
 
 .modal-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: absolute;
-  z-index: 5;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 2rem;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-content {
@@ -45,13 +42,28 @@ h1 {
   justify-content: space-evenly;
 }
 
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .planner-title {
   text-align: center;
 }
 
 .week-btn {
-  width: 5.6rem;
-  height: 5.6rem;
+  margin: 1rem;
+  padding: 2rem;
+  color: white;
+  border-radius: 0.35rem;
+  background-color: royalblue;
+  cursor: pointer;
+}
+
+.week-btn:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .entry-btn {
@@ -67,12 +79,18 @@ h1 {
   margin-bottom: 25px;
 }
 
-.update-button {
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+/* .update-button {
+
 }
+
+.delete-button {
+
+}
+
+.update-button:hover,
+.delete-button:hover {
+
+} */
 
 .select-input {
   margin-bottom: 1rem;
@@ -80,11 +98,12 @@ h1 {
 }
 
 .overlay {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.76);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 button:hover::after {
@@ -95,8 +114,25 @@ tr:nth-child(odd) {
   background-color: grey;
 }
 
+tr:nth-child(even) {
+  color: black;
+}
+
 th {
-  background-color: darkslategrey;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+table {
+  font-size: 16px;
+  width: 50%;
+  justify-content: center;
+}
+
+.table-schedule {
+  justify-content: center;
 }
 
 .events {
