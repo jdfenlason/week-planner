@@ -4,6 +4,8 @@
 
 body {
   margin: 0 auto;
+  background-color: #41729f;
+  color: white;
 }
 
 header {
@@ -16,7 +18,7 @@ header {
 
 .modal-container {
   border: 1px solid black;
-  background-color: white;
+  background-color: #c3e0c5;
   padding: 10px 2rem;
   width: 50%;
   position: fixed;
@@ -26,7 +28,7 @@ header {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #c3e0c5;
   margin: 0 auto;
   padding: 0 1.75rem;
 }
@@ -57,13 +59,9 @@ header {
   padding: 2rem;
   color: white;
   border-radius: 0.35rem;
-  background-color: royalblue;
+  background-color: #274472;
   cursor: pointer;
-}
-
-.week-btn:hover {
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #274472;
 }
 
 .entry-btn {
@@ -71,12 +69,45 @@ header {
   padding: 0.5rem 2.5rem;
   z-index: 500;
   cursor: pointer;
+  background-color: #274472;
+  color: white;
+  border-radius: 0.35rem;
+  border: 1px solid #274472;
 }
 
 .submit-button {
   float: right;
-  margin-top: 0.3rem;
+  margin-top: 0.7rem;
   margin-bottom: 25px;
+  border: 1px solid #5885af;
+  background-color: #5885af;
+  border-radius: 0.35rem;
+  color: white;
+  padding: 0.35rem;
+}
+
+.select-input {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0.35rem;
+  color: white;
+  background-color: #5885af;
+  border: 1px solid #5885af;
+  border-radius: 0.35rem;
+}
+
+.select-input:hover,
+.submit-button:hover,
+.entry-btn:hover,
+.week-btn:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+textarea {
+  border: 1px solid grey;
+  border-radius: 0.35rem;
+  color: grey;
 }
 
 /* .update-button {
@@ -91,11 +122,6 @@ header {
 .delete-button:hover {
 
 } */
-
-.select-input {
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-}
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.76);
@@ -115,7 +141,7 @@ tr:nth-child(odd) {
 }
 
 tr:nth-child(even) {
-  color: black;
+  color: rgb(125, 125, 125);
 }
 
 th {

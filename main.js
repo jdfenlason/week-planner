@@ -6,7 +6,7 @@ var $entryBtn = document.querySelector('.entry-btn');
 var $container = document.querySelector('.container');
 var $form = document.querySelector('form');
 // var $btnContainer = document.querySelector('button-container');
-
+var $viewDays = document.querySelectorAll('tbody');
 var $tbody = document.querySelector('tbody');
 window.addEventListener('DOMContentLoaded', entryLoad);
 var data = {
@@ -40,7 +40,11 @@ function addEntries(event) {
   };
   data.entries.unshift(userInput);
   data.nextEntryId++;
-  // for(var i =0; i <data.entries.length; i++)
+  for (var i = 0; i < $viewDays.length; i++) {
+    if (userInput.day === $viewDays[i].dataset.view) {
+      $viewDays[i].appendChild(createEntry(userInput));
+    }
+  }
 }
 
 function submit(event) {
