@@ -1,17 +1,19 @@
-// var data = {
-//   view: 'entry-form',
-//   entries: [],
-//   editing: null,
-//   nextEntryId: 1
-// };
+/* exported data */
 
-// var previousDataJSON = localStorage.getItem('data-storage');
-// if (previousDataJSON !== null) {
-//   data = JSON.parse(previousDataJSON);
-// }
-// function storeData(event) {
-//   var dataJSON = JSON.stringify(data);
-//   localStorage.setItem('data-storage', dataJSON);
-// }
+var data = {
+  view: 'entry-form',
+  entries: [],
+  editing: null,
+  nextEntryId: 1
+};
 
-// window.addEventListener('beforeunload', storeData);
+var previousDataJSON = localStorage.getItem('data-storage');
+if (previousDataJSON !== null) {
+  data = JSON.parse(previousDataJSON);
+}
+function storeData(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data-storage', dataJSON);
+}
+
+window.addEventListener('beforeunload', storeData);

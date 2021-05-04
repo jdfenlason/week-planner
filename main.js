@@ -1,3 +1,5 @@
+/* global data */
+
 var $modal = document.querySelector('.modal-container');
 var $modalContent = document.querySelector('.modal-content');
 var $overlay = document.querySelector('.overlay');
@@ -9,11 +11,6 @@ var $form = document.querySelector('form');
 var $viewDays = document.querySelectorAll('tbody');
 var $tbody = document.querySelector('tbody');
 window.addEventListener('DOMContentLoaded', entryLoad);
-var data = {
-  entries: [],
-  editing: null,
-  nextEntryId: 1
-};
 
 $entryBtn.addEventListener('click', addEntryBtn);
 
@@ -86,14 +83,3 @@ function entryLoad(event) {
     $tbody.append($entryNode);
   }
 }
-
-var previousDataJSON = localStorage.getItem('data-storage');
-if (previousDataJSON !== null) {
-  data = JSON.parse(previousDataJSON);
-}
-function storeData(event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('data-storage', dataJSON);
-}
-
-window.addEventListener('beforeunload', storeData);
