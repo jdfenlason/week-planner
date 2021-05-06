@@ -1,19 +1,21 @@
 /* exported data */
 
 var data = {
-  view: 'entry-form',
-  entries: [],
   editing: null,
+  view: 'monday',
+  entries: [],
   nextEntryId: 1
 };
 
-var previousDataJSON = localStorage.getItem('data-storage');
-if (previousDataJSON !== null) {
-  data = JSON.parse(previousDataJSON);
-}
-function storeData(event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('data-storage', dataJSON);
+var previousData = localStorage.getItem('data');
+
+if (previousData) {
+  data = JSON.parse(previousData);
 }
 
-window.addEventListener('beforeunload', storeData);
+function beforeUnload(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data', dataJSON);
+}
+
+window.addEventListener('beforeunload', beforeUnload);

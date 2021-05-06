@@ -68,18 +68,25 @@
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
               </select>
+                <select name="amPm" id="am-pm" required>
+              <option value="am">AM</option>
+              <option value="pm">PM</option>
+            </select>
+
               <div class="row">
                 <div class="col">
                   <textarea
                     placeholder="Description"
-                    name="description"
-                    class="description"
+                    name="notes"
+                    class="notes"
+                    id="notes"
                     cols="30"
                     rows="5"
                   ></textarea>
                 </div>
               </div>
-              <div class="class">
+              <div class="button-class">
+                <button id="cancel-button" type="button">Cancel</button>
                 <button class="submit-button" type="submit">Submit</button>
               </div>
             </form>
@@ -93,26 +100,24 @@
 
       <div class="row">
         <div class="events">
-          <h2>Schedule Events for: Monday</h2>
+          <h2 id="day-change">Scheduled Events for: Monday</h2>
         </div>
       </div>
 
       <div class="row">
         <div class="col table-schedule">
-          <table class="schedule">
+          <table class="schedule" id="scheduler">
             <thead>
               <tr>
                 <th>Time</th>
                 <th>Description</th>
+
               </tr>
             </thead>
-            <tbody class="day hidden" data-view="sunday"></tbody>
-            <tbody class="day" data-view="monday"></tbody>
-            <tbody class="day hidden" data-view="tuesday"></tbody>
-          <tbody class="day hidden" data-view="wednesday"></tbody>
-          <tbody class="day hidden" data-view="thursday"></tbody>
-          <tbody class="day hidden" data-view="friday"></tbody>
-          <tbody class="day hidden" data-view="saturday"></tbody>
+              <tbody id="entries">
+
+              </tbody>
+
 
           </table>
         </div>
